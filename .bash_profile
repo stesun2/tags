@@ -1,4 +1,3 @@
-
 alias adog="git log --all --decorate --oneline --graph"
 alias addog='/site/apps/git/bin/git log --all --decorate --oneline --graph --pretty=format:"%C(yellow)%h%Creset%C(cyan)%C(bold)%d%Creset %C(cyan)%cd%Creset %s" --date=format:"%y-%m%d-%H%M"'
 alias ga="git add"
