@@ -5,13 +5,10 @@ development:
   database: 'db/development.sqlite3'
 
 test:
-  driver: 'sqlite'
   database: 'db/test.sqlite3'
 
 uat:
-  driver: 'sqlite'
   database: '/data/tags/uat.sqlite3'
 
 production:
-  driver: 'sqlite'
   database: '/data/tags/production.sqlite3'

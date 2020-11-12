@@ -8,7 +8,9 @@ It knows about development, uat, and production environments.
 
 It uses a SQLite database.
 
-It uses a primitive (and rather obsolete) ORM called [Flask-Orator](https://github.com/sdispater/flask-orator).
+It uses a simple ORM called [Peewee](https://github.com/coleifer/peewee).
+
+This edition has also been refactored to be somewhat [Django-looking](http://charlesleifer.com/blog/structuring-flask-apps-a-how-to-for-those-coming-from-django/).
 
 This app is so barebones and unfinished that it begs for changes.  Using git, you will collaborate with your team to make it better.
 
