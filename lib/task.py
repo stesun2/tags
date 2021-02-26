@@ -13,9 +13,7 @@ def load_schema():
 
 def seed():
     conn = connect(dbname)
-    f = open('db/seed.sql', 'r')
-    for sql in f:
-      conn.execute(sql)
-      conn.commit()
-    f.close() 
+    with open('db/seed.sql', 'r') as f:
+      conn.executescript( f.read() )
+    conn.commit()
     conn.close
