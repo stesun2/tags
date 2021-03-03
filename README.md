@@ -22,25 +22,28 @@ This app is so barebones and unfinished that it begs for changes.  Using git, yo
 
 ## Set up and run the webapp
 
-Fork the Tags repo from https://github.com/walquis/tags.
-
-Run these commands in a Terminal session:
-```bash
-$ cd # Start from your home directory
-$ mkdir src; cd src  # Or cd to wherever you keep code projects
-$ git clone https://github.com/<yourlogin>/tags # Clone your fork
+Run these commands in a Terminal session (for best results, I recommend starting Terminal.app separately, rather than running a terminal session within your IDE).  You should be able to copy/paste pretty much verbatim, except that you need to replace \<yourlogin\> with your own login.
+```console
+$ cd                          # Start from your home directory
+$ mkdir -p src
+$ cd src                      # Or cd to wherever you keep code projects
+$ git clone https://github.com/<yourlogin>/tags    # Clone your fork
 # Or use ssh protocol...  $ git clone git@github.com:<yourlogin>/tags
 $ cd tags
-$ mkdir ../shared  # In case you want to share config across releases
+$ mkdir ../shared             # In case you want to share config across releases
 $ cp config.yml.sample ../shared/config.yml
-$ python3 -m venv venv  # Make a virtual env in the "venv" directory
-$ source venv/bin/activate  # Enter your virtual env
+$ python3 -m venv venv        # Use the "venv" module to create a virtual env in the "venv" directory
+$ source venv/bin/activate         # Enter your python3 virtual env
 $ pip install -r requirements.txt  # Populate current virtual env with packages
 $ python bin/load_schema.py   # Init your DB structure. Assumes FLASK_ENV=development
-$ python bin/seed.py   # Add data to your DB.  Assumes FLASK_ENV=development
+$ python bin/seed.py          # Add data to your DB.  Assumes FLASK_ENV=development
 $ bin/run-flask-webserver.sh  # Assumes FLASK_ENV=development
 ```
-Now visit http://localhost:5555 in your browser.
+Now visit [Your LocalHost](http://localhost:5000){:target="_blank"} in your browser.
+
+To stop the app: At your shell prompt, hold down the Ctrl key and press 'c'.
+
+To exit your virtualenv: In the terminal, type 'deactivate'.
 
 ## A Simulated Project for Collaborating
 
@@ -97,7 +100,6 @@ Making changes:  You can view the solutions as described above and then make the
 ### Round Two Tasks
 - ```layout``` - Add a Jinja layout
 - ```better_delete_route``` - Use a DELETE method (and some Javascript/jQuery) to delete tags
-- ```peewee``` - Switch the ORM from Flask-Orator to Peewee (if you really want to bite off a big chunk!)
 
 ### A Possible Workflow
 1. ```git checkout master``` - The branch where your team will rendezvous with changes.
