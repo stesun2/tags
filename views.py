@@ -2,7 +2,6 @@ from flask import request, redirect
 from datetime import datetime
 from app import app
 from tag import Tag
-from IPython import embed  #  Can set breakpoints by inserting embed()
 
 @app.route('/', methods=['GET'])
 def show_tags():
