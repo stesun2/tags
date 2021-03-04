@@ -39,7 +39,7 @@ $ python bin/load_schema.py   # Init your DB structure. Assumes FLASK_ENV=develo
 $ python bin/seed.py          # Add data to your DB.  Assumes FLASK_ENV=development
 $ bin/run-flask-webserver.sh  # Assumes FLASK_ENV=development
 ```
-Now visit [Your LocalHost](http://localhost:5000){:target="_blank"} in your browser.
+Now visit http://localhost:5000 in your browser.
 
 To stop the app: At your shell prompt, hold down the Ctrl key and press 'c'.
 
