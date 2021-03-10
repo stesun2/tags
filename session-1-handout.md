@@ -35,8 +35,8 @@ $
 
 This will set you up with cool shortcuts to see what's going on with your repo state.
 ```
-$ cat git-aliases.sh
-$ ls -l *.sh
+$ cat bin/git-aliases.sh
+$ ls -l bin/*.sh
 $ bin/git-aliases.sh   # Activate aliases in current shell
 $ bin/append-aliases-to-profile.sh  # So they'll be part of future shells.
 $ adog  # This should work now.
