@@ -7,9 +7,9 @@ This course assumes you have ...
 
 ## Fork & clone the repo, and set up and run the webapp
 
-Fork and clone [Tags](https://github.com/walquis/tags){:target="_blank"}.
+1. Fork and clone [https://github.com/walquis/tags](https://github.com/walquis/tags){:target="_blank"}.
 
-Run these commands in a Terminal session (for best results, I recommend starting Terminal.app separately, rather than running a terminal session within your IDE).  You should be able to copy/paste pretty much verbatim, except that you need to replace \<yourlogin\> with your own login.
+2. Run these commands in a Terminal session (for best results, I recommend starting Terminal.app separately, rather than running a terminal session within your IDE).  You should be able to copy/paste pretty much verbatim, except that you need to replace \<yourlogin\> with your own login.
 ```console
 $ cd                          # Start from your home directory
 $ mkdir -p src
@@ -26,7 +26,7 @@ $ python bin/load_schema.py   # Init your DB structure. Assumes FLASK_ENV=develo
 $ python bin/seed.py          # Add data to your DB.  Assumes FLASK_ENV=development
 $ bin/run-flask-webserver.sh  # Assumes FLASK_ENV=development
 ```
-Now visit [Your LocalHost](http://localhost:5000){:target="_blank"} in your browser.
+3. Now visit [Your LocalHost](http://localhost:5000){:target="_blank"} in your browser.
 
 To stop the app: At your shell prompt, hold down the Ctrl key and press 'c'.
 
@@ -76,7 +76,7 @@ If you have time, also take a look at ```views.py``` and look at how routes are 
 - What code saves a tag to the database?  What would straight SQL look like (i.e., no ORM)?
 - Can you think of any structural improvements that could be made to this view?
 
-Now that's done; we can proceed with [Session 1](session-1-handout).  The git skills we'll pick up are summarized in the [Syllabus](syllabus-session-1).
+Now that's done; we can proceed with [Session 1](session-1-handout).  The git skills we'll pick up are summarized in the [Syllabus](session-1-syllabus).
 
 
 ## Bonus prework - explore some [Unix/Shell Concepts](unix-shell-concepts)
