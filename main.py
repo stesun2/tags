@@ -10,4 +10,4 @@ from tag import Tag  # a Peewee DB model
 
 if __name__ == '__main__':
     db.create_tables([Tag], safe=True)
-    app.run()
+    app.run('0.0.0.0','5555', debug=True)
