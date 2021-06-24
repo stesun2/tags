@@ -6,6 +6,7 @@ from tag import Tag
 @app.route('/', methods=['GET'])
 def show_tags():
     g.setdefault('image', app.config['config']['awesome_image']) # Flask.g: a way to pass var to a template
+    g.setdefault('title', app.config['config']['title'])
     return render_template('index.html', tags=Tag.select())
 
 @app.route('/tags', methods=['POST'])
