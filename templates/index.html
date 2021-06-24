@@ -11,7 +11,7 @@
 </div>
 <div>
   {% for tag in tags %}
-    {{ tag.name }}<br>
+    <a href="/tags/{{ tag.name }}">{{ tag.name }}</a><br>
   {% endfor %}
 </div>
 {% endblock %}

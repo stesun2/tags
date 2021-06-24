@@ -16,3 +16,10 @@ def add_tag():
       defaults={'created_at': datetime.now(), 'updated_at': datetime.now()})
 
     return redirect('/')
+
+# GET is not the recommended way to implement DELETE, but oh well...
+@app.route('/tags/<tag>', methods=['GET'])
+def remove_tag(tag):
+    tag_to_remove = Tag.get(Tag.name == tag).delete_instance()
+
+    return redirect('/')
