@@ -10,6 +10,10 @@ def show_tags():
     g.setdefault('title', app.config['config']['title'])
     return render_template('index.html', tags=Tag.select())
 
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
 @app.route('/tags', methods=['POST'])
 def add_tag():
     Tag.get_or_create(
