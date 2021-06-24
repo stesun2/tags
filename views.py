@@ -2,6 +2,7 @@ from flask import request, redirect, render_template, g
 from datetime import datetime
 from app import app
 from tag import Tag
+from IPython import embed
 
 @app.route('/', methods=['GET'])
 def show_tags():
@@ -12,14 +13,14 @@ def show_tags():
 @app.route('/tags', methods=['POST'])
 def add_tag():
     Tag.get_or_create(
-      name=request.form['tag-name'],
-      defaults={'created_at': datetime.now(), 'updated_at': datetime.now()})
+        name=request.form['tag-name'],
+        defaults={'created_at': datetime.now(), 'updated_at': datetime.now()})
 
     return redirect('/')
 
-# GET is not the recommended way to implement DELETE, but oh well...
-@app.route('/tags/<tag>', methods=['GET'])
+# Called by Javascript
+@app.route('/tags/<tag>', methods=['DELETE'])
 def remove_tag(tag):
     tag_to_remove = Tag.get(Tag.name == tag).delete_instance()
 
-    return redirect('/')
+    return '', 204 # No need to return any content
