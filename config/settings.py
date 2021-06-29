@@ -120,6 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# For finding assets not tied to a particular app.
+STATICFILES_DIRS = [ BASE_DIR / 'static' ]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
