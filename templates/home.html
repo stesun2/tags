@@ -10,4 +10,9 @@
     {% csrf_token %} <!-- Required by Django forms targeting internal URLs -->
   </form>
 </div>
+<div>
+  {% for tag in tags %}
+    <div>{{ tag.name }}</div>
+  {% endfor %}
+</div>
 {% endblock %}
