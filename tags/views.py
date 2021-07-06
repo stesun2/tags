@@ -27,5 +27,11 @@ class HomePageView(FormView):
 
         return render(request, 'home.html', {'form': form, 'tags': tags})
 
+    # 'name' corresponds to and is populated by the <name> param in urls.py
+    def tag(request, name):
+        tag = Tag.objects.get(name=name)
+        tag.delete()
+        return HttpResponseRedirect('/')
+
 class AboutPageView(TemplateView):
     template_name = 'about.html'

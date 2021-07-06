@@ -12,7 +12,7 @@
 </div>
 <div>
   {% for tag in tags %}
-    <div>{{ tag.name }}</div>
+    <div class="tag_link"><a href="/tags/{{ tag.name }}">{{ tag.name }}</a></div>
   {% endfor %}
 </div>
 {% endblock %}
