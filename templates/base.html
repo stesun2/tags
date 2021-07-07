@@ -1,6 +1,31 @@
 <head>
   {% load static %}
   <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+  <script src="{% static 'jquery-3.5.1.js' %}" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      };
+      $('.delete_link').on('click', function(e) {
+        var url = "http://localhost:8000" + $(this).children('a').attr('href');
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('x-csrftoken', getCookie('csrftoken'));
+        xhr.send(null);
+        //window.location.href='/';  // Can't do this since Chrome 88, which blocks JS redirects
+        $(this).remove();  // Modify page w/o redirecting
+        return false;
+      });
+    });
+  </script>
 </head>
 <body>
   <h1>The Ultimate Tag Manager</h1>

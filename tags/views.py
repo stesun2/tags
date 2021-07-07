@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import render
 from .forms import TagForm
 from tags.models import Tag  # The DB model
+from IPython import embed
 
 class HomePageView(FormView):
     # Used to render the page on initial get of '/' route.
@@ -17,6 +18,7 @@ class HomePageView(FormView):
     # urls.py associates it with the '/tags/' route.  Except that it's also called
     # from the '' route ... !!?
     def tags(request):
+        #embed()
         if request.method=='POST':
             form = TagForm(request.POST)
             t = Tag(name=request.POST['tag'])
@@ -24,8 +26,7 @@ class HomePageView(FormView):
             return HttpResponseRedirect('/')
         else:
             form = TagForm()
-
-        return render(request, 'home.html', {'form': form, 'tags': tags})
+            return render(request, 'home.html', {'form': form, 'tags': tags})
 
     # 'name' corresponds to and is populated by the <name> param in urls.py
     def tag(request, name):
